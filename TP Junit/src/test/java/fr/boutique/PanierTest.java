@@ -1,4 +1,4 @@
-package tests;
+package fr.boutique;
 
 public class PanierTest {
 
