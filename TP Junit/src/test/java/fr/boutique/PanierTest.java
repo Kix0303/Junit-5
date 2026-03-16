@@ -86,4 +86,65 @@ class PanierTest {
         assertThrows(IllegalArgumentException.class,
                 () -> panier.appliquerCodeReduction(null));
     }
+
+    // 04 — Cas limites
+
+    @Test
+    void quantiteUneDoitEtreAcceptee() {
+        // Arranger
+        Panier panier = new Panier();
+        Article article = new Article("REF-001", "Stylo", 9.99);
+        // Agir
+        panier.ajouterArticle(article, 1);
+        // Affirmer
+        assertEquals(9.99, panier.calculerTotal(), 0.001);
+    }
+
+    @Test
+    void articleGratuitDoitEtreAccepte() {
+        // Arranger
+        Panier panier = new Panier();
+        Article articleGratuit = new Article("OFFERT-01", "Stylo offert", 0.0);
+        // Agir
+        panier.ajouterArticle(articleGratuit, 1);
+        // Affirmer
+        assertEquals(0.0, panier.calculerTotal(), 0.001);
+    }
+
+    @Test
+    void prixEleveDoitFonctionner() {
+        // Arranger
+        Panier panier = new Panier();
+        Article article = new Article("REF-001", "Ordinateur", 999.99);
+        // Agir
+        panier.ajouterArticle(article, 1);
+        // Affirmer
+        assertEquals(999.99, panier.calculerTotal(), 0.001);
+    }
+
+    @Test
+    void panierAvecUnSeulArticleDoitFonctionner() {
+        // Arranger
+        Panier panier = new Panier();
+        Article article = new Article("REF-001", "Stylo", 1.50);
+        // Agir
+        panier.ajouterArticle(article, 1);
+        // Affirmer
+        assertEquals(1, panier.nombreArticles());
+    }
+
+    @Test
+    void plusieursArticlesDifferentsDansPanier() {
+        // Arranger
+        Panier panier = new Panier();
+        Article a1 = new Article("REF-001", "Stylo", 1.00);
+        Article a2 = new Article("REF-002", "Cahier", 2.00);
+        Article a3 = new Article("REF-003", "Règle", 3.00);
+        // Agir
+        panier.ajouterArticle(a1, 1); // 1.00
+        panier.ajouterArticle(a2, 1); // 2.00
+        panier.ajouterArticle(a3, 1); // 3.00
+        // Affirmer
+        assertEquals(6.00, panier.calculerTotal(), 0.001);
+    }
 }
