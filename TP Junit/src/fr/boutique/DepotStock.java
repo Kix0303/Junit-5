@@ -1,5 +1,5 @@
 package fr.boutique;
 
-public class DepotStock {
-
+public interface DepotStock {
+    int getStock(String referenceArticle);
 }
