@@ -6,3 +6,6 @@ target/
 .vscode/
 .idea/
 *.iml
+
+# Kubernetes secrets (ne jamais committer de vraies valeurs)
+k8s/secret.yml
