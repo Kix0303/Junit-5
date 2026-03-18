@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PanierTest {
 
     @Test
-    void ajouterArticleDeitAugmenterLeNombreDeArticles() {
+    void ajouterArticleDoitAugmenterLeNombreDeArticles() {
         // Arranger
         Panier panier = new Panier();
         Article article = new Article("REF-001", "Stylo bleu", 1.50);
