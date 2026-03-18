@@ -1,0 +1,10 @@
+.git
+.github
+target/
+*.class
+.idea/
+*.iml
+.env
+README.md
+"TP Junit"/bin/
+"TP Junit"/.vscode/

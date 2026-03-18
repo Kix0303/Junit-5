@@ -33,6 +33,7 @@
     </dependencies>
 
     <build>
+        <finalName>boutique</finalName>
         <sourceDirectory>TP Junit/src/main/java</sourceDirectory>
         <testSourceDirectory>TP Junit/src/test/java</testSourceDirectory>
         <plugins>
